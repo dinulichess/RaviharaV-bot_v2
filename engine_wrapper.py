@@ -7,9 +7,9 @@ from enum import Enum
 logger = logging.getLogger(__name__)
 
 
-def create_engine(config):
+def create_engine(config, variant):
     cfg = config["engine"]
-    engine_path = os.path.join(cfg["dir"], cfg["name"])
+    engine_path = os.path.join(cfg["dir"], cfg.get(variant) or cfg["name"])
     engine_working_dir = cfg.get("working_dir") or os.getcwd()
     engine_type = cfg.get("protocol")
     engine_options = cfg.get("engine_options")
@@ -61,8 +61,7 @@ def translate_termination(termination, board, winner_color):
     if termination == Termination.MATE:
         return f"{winner_color.title()} mates"
     elif termination == Termination.TIMEOUT:
-        return "Time forfeiture"
-    elif termination == Termination.RESIGN:
+        return "Time forfeiture"    elif termination == Termination.RESIGN:
         resigner = "black" if winner_color == "white" else "white"
         return f"{resigner.title()} resigns"
     elif termination == Termination.ABORT:
