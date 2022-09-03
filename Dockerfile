@@ -39,4 +39,4 @@ RUN chmod +x fsf
 RUN chmod +x msf
 # Engine name is here ^^^^^^
 
-CMD python3 lichess-bot.py -v
+CMD python3 lichess-bot.py -u
