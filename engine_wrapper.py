@@ -61,7 +61,8 @@ def translate_termination(termination, board, winner_color):
     if termination == Termination.MATE:
         return f"{winner_color.title()} mates"
     elif termination == Termination.TIMEOUT:
-        return "Time forfeiture"    elif termination == Termination.RESIGN:
+        return "Time forfeiture"    
+    elif termination == Termination.RESIGN:
         resigner = "black" if winner_color == "white" else "white"
         return f"{resigner.title()} resigns"
     elif termination == Termination.ABORT:
