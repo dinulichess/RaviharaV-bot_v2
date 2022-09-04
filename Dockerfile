@@ -25,6 +25,10 @@ RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/racingK
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/threeCheck.bin" -O threeCheck.bin
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/kingOfTheHill.bin" -O kingofthehill.bin
 
+#syzygy
+RUN wget --no-check-certificate "https://bicjia.dm.files.1drv.com/y4meGhfz4XMHtA4HTvh-EGh_83H1W7RPStJCgo2DuO1iVulrttPMSvgNJF1kxJ7iA5c3aIpEQBqDTPVjyBglF1hVo3qzG875HyveHYMylIn8STsHAPSzhYE1Vk2BNOO_rQeV2Bb5e-uJrvUormbRn_tj0YPOtBa8cbOm8jYkH7vpjR9iQ-LwykaoPg3fLlaQCA1oG4Qja8TWyNGUorgMFmu_A" -O syzygy.zip \
+&& 7z e syzygy.zip && rm syzygy.zip
+#engines
 RUN bash msf.sh
 RUN rm master.zip
 RUN rm -r Stockfish-master
