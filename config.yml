@@ -65,7 +65,7 @@ engine:                      # Engine settings.
       min_depth: 50
       min_knodes: 10000
     online_egtb:
-      enabled: true
+      enabled: false
       min_time: 120
       max_pieces: 7
       source: "lichess"      # One of "lichess", "chessdb".
