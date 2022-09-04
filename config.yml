@@ -72,10 +72,10 @@ engine:                      # Engine settings.
       move_quality: "best"   # One of "good", "best".
   lichess_bot_tbs:
     syzygy:
-      enabled: false
+      enabled: true
       paths:
-        - "engines/syzygy"
-      max_pieces: 7
+        - "3-4-5/"
+      max_pieces: 5
       move_quality: "best"   # One of "good", "best".
     gaviota:
       enabled: false
